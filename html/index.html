@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gladder Trip</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f0f3f5;
+            /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        #browser {
+            border: none;
+        }
+
+        .nav {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            height: 70px;
+            color: white;
+        }
+
+        .nav>div {
+            margin-left: 40%;
+        }
+
+        .logo {
+            width: 15%;
+            height: 70px;
+        }
+
+        #more-menus {
+            border: none;
+            background-color: #0a438b;
+            color: white;
+        }
+
+        #options {
+            background-color: white;
+            color: black;
+            padding: 20px;
+        }
+
+        .section-two {
+            display: flex;
+        }
+
+        .section-two>div {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+        }
+
+        .main {
+            background-color: #0a438b;
+        }
+
+        #more-menus {
+            font-weight: bolder;
+        }
+
+        select {
+
+            padding: 15px;
+        }
+
+        .navbar {
+            background-color: #0a438b !important;
+            height: 70px;
+        }
+
+        #more {
+            color: white;
+            font-weight: bolder;
+        }
+
+        .dropdown-toggle::after {
+            color: white;
+        }
+
+        .poster {
+            width: 100%;
+            background-image: url('https://forever.travel-assets.com/flex/flexmanager/images/2021/06/25/TVLY_SeizeYourSomeday_lpheroB_1680x945_20210623.jpg?impolicy=fcrop&w=900&h=225&q=mediumHigh');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            padding: 30px;
+        }
+
+        .poster>img {
+            height: auto;
+        }
+
+        .tabs {
+            background-color: white;
+            width: 80%;
+            margin: auto;
+            border-radius: 20px;
+
+        }
+
+
+        /* ************hover********** */
+        .hover-underline-animation {
+            display: inline-block;
+            position: relative;
+            /* color: #0087ca; */
+        }
+
+        .hover-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        .hover-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        /* **************end of hover************* */
+
+        /* ******************tabs************* */
+
+        .mytabs {
+            display: flex;
+            flex-wrap: wrap;
+            /* max-width: 600px; */
+            margin: 50px auto;
+            padding: 25px;
+            width: 80%;
+            margin: auto;
+            justify-content: center;
+        }
+
+        .mytabs input[type="radio"] {
+            display: none;
+        }
+
+        .mytabs label {
+            padding: 10px;
+            /* background: #e2e2e2; */
+            font-weight: bold;
+        }
+
+        .mytabs label:hover {
+            color: skyblue;
+        }
+
+        .mytabs .tab {
+            width: 100%;
+            padding: 20px;
+            background: #fff;
+            order: 1;
+            display: none;
+        }
+
+        .mytabs .tab h2 {
+            font-size: 3em;
+        }
+
+        .mytabs input[type='radio']:checked+label+.tab {
+            display: block;
+        }
+
+
+
+
+
+        .mytabs input[type="radio"]:checked+label {
+            background: #fff;
+        }
+
+
+        /* *****************end of tabs************ */
+
+        .none {
+            display: none;
+        }
+
+        .none1 {
+            display: none;
+        }
+
+        .search {
+            margin: 20px;
+            border: none;
+            background-color: #0D5AB9;
+            color: white;
+            border-radius: 8px;
+            font-size: 20px;
+            padding: 10px 60px;
+            font-weight: 600;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .flex {
+            width: 78%;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        .flex>div {
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            margin: 140px 0px 40px 0px;
+        }
+
+        .flex>div>img {
+            width: 100%;
+            height: 180px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .sub p {
+            width: 90%;
+            margin: auto;
+            margin: 10px 20px;
+        }
+
+        .sub h6 {
+            width: 90%;
+            margin: auto;
+            position: absolute;
+            margin-top: -30px;
+            font-weight: 900;
+            margin-left: 20px;
+            color: white;
+
+        }
+
+        #comfort {
+            border: none;
+            color: #0087ca;
+            width: 117px;
+
+        }
+
+        #comfort>option {
+            color: black;
+
+        }
+
+        #comfort:focus-visible {
+            border: none;
+        }
+
+        #traveller {
+            border: none;
+            color: #0087ca;
+            width: 117px;
+            margin-left: 30%;
+        }
+
+        #traveller:focus-visible {
+            border: none;
+        }
+
+        #traveller>option {
+            color: black;
+
+        }
+
+        #comfort:hover {
+            text-decoration: underline;
+        }
+
+        .anotherflight {
+            border: none;
+            color: #0087ca;
+            cursor: pointer;
+        }
+
+        .fbutton {
+            border: none;
+        }
+
+        .fbutton:hover {
+            background-color: #0087ca;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+
+            <img class="logo" src="C:\Users\shara\Downloads\gladden-trip-logo2.png" alt="">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="more"> More Travel</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="index.html">Packages</a>
+                                <a class="dropdown-item" href="#">Stays</a>
+                                <a class="dropdown-item" href="#">Cars</a>
+                                <a class="dropdown-item" href="#">Flights</a>
+                                <a class="dropdown-item" href="#">Cruises</a>
+                                <a class="dropdown-item" href="#">Things to do</a>
+                                <a class="dropdown-item" href="#">Trips for Me</a>
+                                <a class="dropdown-item" href="#">Discover</a>
+                                <a class="dropdown-item" href="#">Travel Deal</a>
+                                <a class="dropdown-item" href="#">Get Inspire</a>
+                                <a class="dropdown-item" href="#">Groups & meetings</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+
+
+            <div class="section-two">
+                <div>Espanol</div>
+                <div>List your property</div>
+                <div>Support</div>
+                <div>Trips</div>
+                <div>Sign in</div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="poster">
+        <div class="tabs">
+            <div class="mytabs">
+                <input type="radio" id="tabstay" name="mytabs" checked="checked">
+                <label for="tabstay" class="hover-underline-animation">Stays</label>
+                <div class="tab ">
+                    <!-- <h2>Stays</h2> -->
+                    <input type="text" placeholder="Going to">
+                    <input type="date" placeholder="Check-in">
+                    <input type="date" placeholder="Check-out">
+                    <input type="text" placeholder="Travelers">
+
+                    <div>
+                        <input type="checkbox" id="add_flight" onclick="display()"><span>Add Flight</span>
+                        <input type="checkbox"><span>Add Car</span>
+                    </div>
+                    <div class="none">
+                        <input type="text" placeholder="Leaving from">
+                    </div>
+
+                    <div class="center">
+                        <button class="search">Search</button>
+                    </div>
+                </div>
+
+
+                <input type="radio" id="tabflight" name="mytabs">
+                <label for="tabflight" class="hover-underline-animation">Flights</label>
+                <div class="tab">
+
+                    <div class="">
+                        <button class="fbutton" onclick="openCity('round')">Roundtrip</button>
+                        <button class="fbutton" onclick="openCity('one_way')">One-way</button>
+                        <button class="fbutton" onclick="openCity('multi')">Multi-city</button>
+
+
+                        <select name="" id="traveller">
+                            <option value="persons" selected>1 traveler</option>
+                            <option value="adult">Adult</option>
+                            <option value="child">Child</option>
+                            <option value="infants">Infants</option>
+                        </select>
+
+                        <select name="" id="comfort">
+                            <option value="economy" selected>Economy</option>
+                            <option value="bronze">Premium economy</option>
+                            <option value="business">Business class</option>
+                            <option value="first">First class</option>
+                        </select>
+
+
+                    </div>
+
+                    <div id="round" class="city">
+                        <div>
+                            <input type="text" placeholder="Leaving from">
+                            <input type="text" placeholder="Going to">
+                            <input type="date" placeholder="Departing">
+                            <input type="date" placeholder="Returning">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="add_flight1" onclick="display1()"><span>Add Place to Stay</span>
+                            <input type="checkbox"><span>Add a Car</span>
+                        </div>
+                        <div class="none1">
+                            <input type="text" placeholder="Check-in" onfocus="(this.type='date')">
+                            <input type="text" placeholder="Checkout" onfocus="(this.type='date')">
+                        </div>
+
+                        <div class="center">
+                            <button class="search">Search</button>
+                        </div>
+                    </div>
+
+                    <div id="one_way" class="city" style="display:none">
+                        <div>
+                            <input type="text" placeholder="Leaving from">
+                            <input type="text" placeholder="Going to">
+                            <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+
+                        </div>
+                        <div>
+                            <input type="checkbox" id="add_flight2" onclick="display2()"><span>Add Place to Stay</span>
+                            <!-- <input type="checkbox"><span>Add a Car</span> -->
+                        </div>
+                        <div class="none2" style="display:none">
+                            <input type="text" placeholder="Check-in" onfocus="(this.type='date')">
+                            <input type="text" placeholder="Checkout" onfocus="(this.type='date')">
+                        </div>
+
+                        <div class="center">
+                            <button class="search">Search</button>
+                        </div>
+                    </div>
+
+                    <div id="multi" class="city" style="display:none">
+                        <h6>Flight1</h6>
+                        <input type="text" placeholder="Leaving from">
+                        <input type="text" placeholder="Going to">
+                        <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+
+
+                        <h6>Flight2</h6>
+                        <input type="text" placeholder="Leaving from">
+                        <input type="text" placeholder="Going to">
+                        <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+
+                        <button class="anotherflight">Add Another Flight</button>
+
+                        <div class="center">
+                            <button class="search">Search</button>
+                        </div>
+                    </div>
+
+
+
+                </div>
+<!-- ******************************Car******************************* -->
+                <input type="radio" id="tabcar" name="mytabs">
+                <label for="tabcar" class="hover-underline-animation">Car</label>
+                <div class="tab">
+                  
+                    <div class="">
+                        <button class="fbutton" onclick="openCity('rental')">Rental Cars</button>
+                        <button class="fbutton" onclick="openCity('airport')">Airport Transportation</button>
+                        
+                    </div>
+
+
+                    <div id="rental" class="city" style="display:block">
+                        <div>
+                            <input type="text" placeholder="Pickup">
+                            <input type="text" placeholder="Same as pick-up">
+                            <input type="text" placeholder="Pickup Date" onfocus="(this.type='date')">
+                            <input type="text" placeholder="Drop-off date" onfocus="(this.type='date')">
+                            <input type="text" placeholder="Pickup Time" onfocus="this.type='time'">
+                            <input type="text" placeholder="Drop off Time" onfocus="this.type='time'">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="add_flight1" onclick="display1()"><span>Add Place to Stay</span>
+                            <input type="checkbox"><span>Add a Car</span>
+                        </div>
+                        <div class="none1">
+                            <input type="text" placeholder="Check-in" onfocus="(this.type='date')">
+                            <input type="text" placeholder="Checkout" onfocus="(this.type='date')">
+                        </div>
+
+                        <div class="center">
+                            <button class="search">Search</button>
+                        </div>
+                    </div>
+
+                    <div id="airport" class="city" style="display:none">
+                        <div>
+                            <input type="text" placeholder="Leaving from">
+                            <input type="text" placeholder="Going to">
+                            <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+
+                        </div>
+                        <div>
+                            <input type="checkbox" id="add_flight2" onclick="display2()"><span>Add Place to Stay</span>
+                            <!-- <input type="checkbox"><span>Add a Car</span> -->
+                        </div>
+                        <div class="none2" style="display:none">
+                            <input type="text" placeholder="Check-in" onfocus="(this.type='date')">
+                            <input type="text" placeholder="Checkout" onfocus="(this.type='date')">
+                        </div>
+
+                        <div class="center">
+                            <button class="search">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <input type="radio" id="tabpack" name="mytabs">
+                <label for="tabpack" class="hover-underline-animation">Packages</label>
+                <div class="tab">
+                    <h2>Packages</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+
+                <input type="radio" id="tabthings" name="mytabs">
+                <label for="tabthings" class="hover-underline-animation">Things to do</label>
+                <div class="tab">
+                    <h2>Things to do</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+
+                <input type="radio" id="tabcru" name="mytabs">
+                <label for="tabcru" class="hover-underline-animation">Cruises</label>
+                <div class="tab">
+                    <h2>Cruises</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- end of poster -->
+
+    <div class="contain">
+        <a href="index.html"></a>
+        <div class="flex">
+            <div class="sub">
+                <img src="https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_FitForYou_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=600&h=257&q=medium"
+                    alt="">
+                <h6>Find your perfect trip</h6>
+                <p>Plan a trip for the whole familly---- from family travel tips to family- friendly filters, our tools
+                    make it easy.</p>
+            </div>
+
+            <div class="sub">
+                <img src="https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_Transparency_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=600&h=257&q=medium"
+                    alt="">
+                <h6>Book with flexibility</h6>
+                <p>Looking for a change of scenery, but want something flexible? With free cancellation on most hotels,
+                    you can book with peace of mind.</p>
+            </div>
+
+            <div class="sub">
+                <img src="https://forever.travel-assets.com/flex/flexmanager/images/2020/11/12/TVLY_StoreFrontRefresh_BrandPromise_GotYourBack_sfimg_562x240_20201111.jpg?impolicy=fcrop&w=600&h=257&q=medium"
+                    alt="">
+                <h6>We've got your back</h6>
+                <p>Need more help along your journey? We offer 24/7 support on social and through virtual agents onsite.
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<script>
+    function display() {
+        var addflight = document.getElementById("add_flight");
+        var inp = document.querySelector(".none");
+        if (addflight.checked == true) {
+            inp.style.display = "block";
+        } else {
+            inp.style.display = "none"
+        }
+    }
+
+    function display1() {
+        var addflight = document.getElementById("add_flight1");
+        var inp = document.querySelector(".none1");
+        if (addflight.checked == true) {
+            inp.style.display = "block";
+        } else {
+            inp.style.display = "none"
+        }
+    }
+
+    function display2() {
+        var addflight = document.getElementById("add_flight2");
+        var inp = document.querySelector(".none2");
+        if (addflight.checked == true) {
+            inp.style.display = "block";
+        } else {
+            inp.style.display = "none"
+        }
+    }
+
+    function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+    }
+</script>
