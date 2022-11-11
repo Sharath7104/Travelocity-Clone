@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body{
+            background-color: #f0f3f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+        }
+
+        #hotelsmain {
+            width: 50%;
+            margin: auto;
+        }
+
+        .hotellist {
+            display: flex;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            height: 180px;
+        
+        }
+
+        .hotellist>div:nth-child(1){
+            width: 40%;
+        }
+
+        .hotellist>div:nth-child(2){
+            width: 60%;
+            padding: 0px 10px;
+        }
+
+        
+
+        .hotellist>div>img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 0px 0px 10px;
+        }
+
+        .rateprice{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .rateprice>div>p{
+            font-size: 13px;
+        }
+
+        .pdata{
+            margin-top: -20px;
+        }
+
+        .price{
+            margin-top: 24px;
+        }
+
+        .rating{
+            margin-top: -10px;
+        }
+
+        .refund{
+            margin-top: 29px;
+            width: 60%;
+            color: #1f7d57;
+        }
+
+        .distance{
+            margin-top: -15px;
+            font-size: 13px;
+        }
+
+        .total{
+            margin-top: -10px;
+            font-size: 14px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="hotelsmain">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    let url = "./data.json";
+
+    let data = [];
+
+    async function getData() {
+        try {
+            let res = await fetch(url);
+            let out = await res.json();
+            data = [...out]
+
+            displayHotels(out)
+        }
+        catch (err) {
+            alert(err);
+        }
+
+    }
+    getData();
+
+
+    function displayHotels(data) {
+    
+        data.forEach((element, index) => {
+            let x = (Math.floor(Number((element.amount)*18/100) + Number(element.amount)))
+            let divmain = document.createElement("div");
+            divmain.className = "hotellist"
+
+            let div = document.createElement("div");
+
+
+            let div1 = document.createElement("div")
+
+            let div2 = document.createElement("div");
+            div2.className = "rate";
+            
+            let div3 = document.createElement("div")
+            div3.className = ""
+
+            let div4 = document.createElement("div")
+            div4.className = "rateprice"
+
+            let image = document.createElement("img");
+            image.setAttribute("src", element.img_url);
+
+            let name = document.createElement("h4");
+            name.innerText = element.name;
+            name.className = "name"
+
+            let distance = document.createElement("p");
+            distance.innerText = element.distance;
+            distance.className = "distance"
+
+            let refund = document.createElement("p");
+            refund.innerText = element.refund;
+            refund.className = "refund"
+
+            let rating = document.createElement("p");
+            rating.innerText = element.rating;
+            rating.className = "rating"
+            
+            let price = document.createElement("h3");
+            price.innerText = "$" +element.amount;
+            price.className = "price"
+
+
+            let pricedata = document.createElement("p")
+            pricedata.innerText = element.day
+            pricedata.className = "pdata"
+
+            let total = document.createElement("p");
+            total.innerText = "$"+x + " total";   
+            total.className = "total";
+
+
+        div.append(image);
+
+        div1.append(name,distance,div4)
+
+        div2.append(refund,rating)
+
+        div3.append(price,pricedata,total)
+
+        div4.append(div2,div3)
+
+        divmain.append(div,div1)
+
+        document.getElementById("hotelsmain").append(divmain)
+
+        });
+    }
+</script>
+
+
+

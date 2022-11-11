@@ -144,6 +144,12 @@
             margin-right: 20px;
         }
 
+        .section-two>div>a{
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         .main {
             background-color: #0a438b;
         }
@@ -465,6 +471,7 @@
             box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
             height: 200px;
             border-radius: 0px 10px 10px 0px;
+            background-color: white;
         }
 
         .addlogo>h5 {
@@ -714,6 +721,7 @@
             border: none;
             background-color: white;
             color: #505c66;
+            cursor: pointer;
         }
 
         .ddmenu>div>button:focus {
@@ -794,6 +802,8 @@
         .icon-margin {
             margin-left: 85%;
         }
+
+        
     </style>
 </head>
 
@@ -841,11 +851,11 @@
 
 
                 <div class="section-two">
-                    <div>Espanol</div>
-                    <div>List your property</div>
-                    <div>Support</div>
-                    <div>Trips</div>
-                    <div>Sign in</div>
+                    <div><a href=""> Espanol</a></div>
+                   <div><a href="listproperty.html">List your property</a></div>
+                    <div><a href="">Support</a> </div>
+                    <div><a href="">Trips</a> </div>
+                    <div><a href="">Sign in</a> </div>
                 </div>
 
 
@@ -873,7 +883,7 @@
                         </div>
 
                         <div class="center">
-                            <button class="search">Search</button>
+                            <button onclick="location.href = 'hotels.html';" class="search">Search</button>
                         </div>
                     </div>
 
