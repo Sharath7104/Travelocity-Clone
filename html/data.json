@@ -1,0 +1,45 @@
+[
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/3000000/2060000/2057700/2057692/720cfa3e.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "1",
+        "name" : "Crowne Plaza Changi Airport (SG Clean), an IHG Hotel",
+        "amount": "304",
+        "day": "per night",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "rating": "4.5/5 Wonderful (1,003 reviews)",
+        "distance": "0.27km from the airport"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/38000000/38000000/37996500/37996413/3de9645f.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "2",
+        "name" : "YOTELAIR Singapore Changi Airport Landside (SG Clean)",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "921",
+        "day": "per night",
+        "rating": "4.1",
+        "distance": "0.35km from the airport"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/43000000/42730000/42723700/42723659/b7d4814b.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "3",
+        "name" : "Dusit Thani Laguna Singapore",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "922",
+        "day": "per night",
+        "rating": "4.5",
+        "distance": "2.82km from the airport"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/7000000/6990000/6980500/6980410/755a4cda.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "4",
+        "name" : "Changi Cove (SG Clean)",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "923",
+        "day": "per night",
+        "rating": "4.5",
+        "distance": "2.47km from the airport"
+    }
+]
