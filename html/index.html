@@ -869,9 +869,9 @@
                     <label for="tabstay" class="hover-underline-animation">Stays</label>
                     <div class="tab ">
                         <!-- <h2>Stays</h2> -->
-                        <input type="text" placeholder="Going to">
-                        <input type="date" placeholder="Check-in">
-                        <input type="date" placeholder="Check-out">
+                        <input type="text" id="goingto" placeholder="Going to">
+                        <input type="date" id="startdate" placeholder="Check-in">
+                        <input type="date" id="enddate" placeholder="Check-out">
                         <input type="text" placeholder="Travelers">
 
                         <div>
@@ -883,7 +883,7 @@
                         </div>
 
                         <div class="center">
-                            <button onclick="location.href = 'hotels.html';" class="search">Search</button>
+                            <button onclick="stays()" class="search">Search</button>
                         </div>
                     </div>
 
@@ -1534,4 +1534,17 @@
             list.style.display = "none"
         }
     })
+
+    // **************localStorage***********
+    function stays(){
+        window.location='./hotels.html';
+
+        let place = document.getElementById("goingto").value;
+
+        localStorage.setItem("place", place);
+
+
+    }
+
+
 </script>
