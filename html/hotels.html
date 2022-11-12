@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
     
+    <title>Document</title>
+
     <style>
-        body{
+        body {
             background-color: #f0f3f5;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
         }
 
         #hotelsmain {
-            width: 50%;
+            width: 100%;
             margin: auto;
         }
 
@@ -24,19 +26,19 @@
             margin-bottom: 20px;
             border-radius: 10px;
             height: 180px;
-        
+
         }
 
-        .hotellist>div:nth-child(1){
+        .hotellist>div:nth-child(1) {
             width: 40%;
         }
 
-        .hotellist>div:nth-child(2){
+        .hotellist>div:nth-child(2) {
             width: 60%;
             padding: 0px 10px;
         }
 
-        
+
 
         .hotellist>div>img {
             width: 100%;
@@ -44,51 +46,101 @@
             border-radius: 10px 0px 0px 10px;
         }
 
-        .rateprice{
+        .rateprice {
             display: flex;
             justify-content: space-between;
         }
 
-        .rateprice>div>p{
+        .rateprice>div>p {
             font-size: 13px;
         }
 
-        .pdata{
+        .pdata {
             margin-top: -20px;
         }
 
-        .price{
-            margin-top: 24px;
+        .price {
+            margin-top: 5px;
         }
 
-        .rating{
+        .rating {
             margin-top: -10px;
         }
 
-        .refund{
+        .refund {
             margin-top: 29px;
             width: 60%;
             color: #1f7d57;
         }
 
-        .distance{
+        .distance {
             margin-top: -15px;
             font-size: 13px;
         }
 
-        .total{
+        .total {
             margin-top: -10px;
             font-size: 14px;
         }
 
-        
+        .hotelspagegrid {
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 400px repeat(auto-fill, 750px) 300px;
+            gap: 10px;
+            justify-content: space-around;
+        }
+
+        .leftgrid {
+            width: 80%;
+            margin-left: 50px;
+        }
+
+        .fixed>img{
+            position: fixed;
+            margin-top: 60px;
+        }
+
+        .button{
+            background-color: #1f7d57;
+            border: none;
+            border-radius: 3px;
+            color: white;
+            padding: 2px 6px;
+        }
     </style>
 </head>
 
 <body>
-    <div id="hotelsmain">
+    
+    <div class="hotelspagegrid">
+        <div class="leftgrid">
+            <h2>
+                Search by Property Name
+            </h2>
+            <input type="text" id="inputsearch" placeholder="&#xF002; eg.Crowne"
+                style="font-family: Arial, 'Font Awesome 5 Free'" oninput="search()">
+        </div>
+        <div>
+            <label for="sort">Sort By</label>
+            <select name="" id="sort" onchange="sort()">
+                <option value="">Recommended</option>
+                <option value="price">Price</option>
+                <option value="distance">Distance</option>
+                <option value="rating">Rating</option>
+            </select>
+            <div id="hotelsmain">
 
+
+            </div>
+        </div>
+
+        <div class="fixed">
+            <img src="https://tpc.googlesyndication.com/simgad/1021342035242972755?" alt="">
+        </div>
     </div>
+
 </body>
 
 </html>
@@ -117,9 +169,17 @@
 
 
     function displayHotels(data) {
-    
+        document.getElementById("hotelsmain").innerHTML = null;
+
+
         data.forEach((element, index) => {
-            let x = (Math.floor(Number((element.amount)*18/100) + Number(element.amount)))
+            let place = localStorage.getItem("place")
+
+            let x = (Math.floor(Number((element.amount) * 18 / 100) + Number(element.amount)))
+
+            let rateconvert = Number(element.rating);
+
+
             let divmain = document.createElement("div");
             divmain.className = "hotellist"
 
@@ -130,7 +190,7 @@
 
             let div2 = document.createElement("div");
             div2.className = "rate";
-            
+
             let div3 = document.createElement("div")
             div3.className = ""
 
@@ -145,7 +205,7 @@
             name.className = "name"
 
             let distance = document.createElement("p");
-            distance.innerText = element.distance;
+            distance.innerText = element.distance + "km from " + place + " airport";
             distance.className = "distance"
 
             let refund = document.createElement("p");
@@ -153,11 +213,11 @@
             refund.className = "refund"
 
             let rating = document.createElement("p");
-            rating.innerText = element.rating;
+            rating.innerText = element.rating + displayrating(element.rating) + " (" + Math.floor(Math.random() * 1001) + ")reviews";
             rating.className = "rating"
-            
+
             let price = document.createElement("h3");
-            price.innerText = "$" +element.amount;
+            price.innerText = "$" + element.amount;
             price.className = "price"
 
 
@@ -166,27 +226,97 @@
             pricedata.className = "pdata"
 
             let total = document.createElement("p");
-            total.innerText = "$"+x + " total";   
+            total.innerText = "$" + x + " total";
             total.className = "total";
 
+            let checkout = document.createElement("button");
+            checkout.innerText = "Checkout"
+            checkout.className = "button"
+            checkout.addEventListener("click", function(){
+                addData("checkout", element);
+                window.location='./checkout.html';
+            })
 
-        div.append(image);
 
-        div1.append(name,distance,div4)
+            div.append(image);
 
-        div2.append(refund,rating)
+            div1.append(name, distance, div4)
 
-        div3.append(price,pricedata,total)
+            div2.append(refund, rating)
 
-        div4.append(div2,div3)
+            div3.append(checkout,price, pricedata, total,)
 
-        divmain.append(div,div1)
+            div4.append(div2, div3)
 
-        document.getElementById("hotelsmain").append(divmain)
+            divmain.append(div, div1)
+
+            document.getElementById("hotelsmain").append(divmain)
 
         });
     }
+
+
+    function search() {
+        let input = document.getElementById("inputsearch").value;
+        let newdata = data.filter(function (elem) {
+            return elem.name.toLowerCase().includes(input.toLowerCase())
+        })
+
+        displayHotels(newdata)
+    }
+
+    function displayrating(rate) {
+        rate = Number(rate);
+        if (rate >= 4.5) {
+            return "/5 Wonderful";
+        } else if (rate > 3.9 && rate < 4.5) {
+            return "/5 Very Good"
+        } else if (rate >= 3.5 && rate < 4) {
+            return "/5 Good"
+        } else if (rate < 3.5 && rate > 2) {
+            return "/5 Average"
+        } else {
+            return "/5"
+        }
+    }
+
+    function sort() {
+        let selected = document.getElementById("sort").value;
+        let filteredData = data.filter(function (ele) {
+            if (selected == "") {
+                getData();
+            }
+            else if (selected == "price") {
+                data.sort(function (a, b) {
+                    return a.amount - b.amount;
+                })
+                displayHotels(data)
+
+            } else if (selected == "distance") {
+                data.sort(function (a, b) {
+                    return a.distance - b.distance;
+                })
+                displayHotels(data)
+            }
+
+            else if (selected == "rating") {
+                data.sort(function (a, b) {
+                    return b.rating - a.rating;
+                })
+                displayHotels(data)
+            }
+        })
+
+    }
+
+    function addData(key, value){
+
+        console.log(value)
+        let newdata = [];
+        newdata.push(value);
+        localStorage.setItem(key, JSON.stringify(newdata));
+    }
+
+
+
 </script>
-
-
-

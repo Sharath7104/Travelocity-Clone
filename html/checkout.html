@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #checkoutmain{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        #checkoutmain>div:nth-child(1){
+            width: 30%;
+        }
+
+        #checkoutmain>div:nth-child(2){
+            width: 40%;
+        }
+        
+
+        #checkoutmain>div:nth-child(3){
+            width: 30%;
+        }
+
+        #checkoutmain>div:nth-child(2)>div>img{
+            width: 100%;
+            height: 300px;
+        }
+
+        #checkoutmain>div:nth-child(2)>div>button{
+            padding: 10px 20px;
+            color: white;
+            background-color:#1f7d57;
+            border: none;
+            border-radius: 10px;
+            font-weight: bolder;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="checkoutmain">
+        <div>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor laudantium impedit sapiente perferendis, atque harum ipsa, ab sit, culpa rem explicabo sunt fugit cupiditate iste qui aperiam doloribus sed beatae.</p> -->
+        </div>
+
+        <div id="checkoutdata">
+
+        </div>
+
+        <div class="checkoutimgfixed">
+            
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let lsdata = JSON.parse(localStorage.getItem("checkout"));
+
+    display(lsdata);
+
+    function display(data){
+
+        data.forEach((element,index) => {
+
+            let x = (Math.floor(Number((element.amount) * 18 / 100) + Number(element.amount)))
+            let divmain = document.createElement("div");
+
+            let image = document.createElement("img");
+            image.setAttribute("src", element.img_url);
+
+            let name = document.createElement("h3");
+            name.innerText = element.name
+
+            let amount = document.createElement("h4");
+            amount.innerText = "$"+ x + " (inclusive tax)"
+
+            let refund = document.createElement("p");
+            refund.innerText = element.refund;
+
+            let rating = document.createElement("p");
+            rating.innerText = element.rating + "/5 Rating";
+
+            let button = document.createElement("button");
+            button.innerText = "Reserve Now"
+            button.addEventListener("click", function(){
+                alert("You have reserved successfully")
+            })
+
+
+
+            divmain.append(image,name,amount, refund, rating, button);
+
+            document.getElementById("checkoutdata").append(divmain)
+        });
+    }
+</script>

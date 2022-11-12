@@ -3,33 +3,33 @@
         "img_url" : "https://images.trvl-media.com/hotels/3000000/2060000/2057700/2057692/720cfa3e.jpg?impolicy=resizecrop&rw=455&ra=fit",
         "id" : "1",
         "name" : "Crowne Plaza Changi Airport (SG Clean), an IHG Hotel",
-        "amount": "304",
+        "amount": "400",
         "day": "per night",
         "refund" : "Fully Refundable Reserve now, pay later",
-        "rating": "4.5/5 Wonderful (1,003 reviews)",
-        "distance": "0.27km from the airport"
+        "rating": "4.5",
+        "distance": "0.27"
     },
 
     {
         "img_url" : "https://images.trvl-media.com/hotels/38000000/38000000/37996500/37996413/3de9645f.jpg?impolicy=resizecrop&rw=455&ra=fit",
         "id" : "2",
-        "name" : "YOTELAIR Singapore Changi Airport Landside (SG Clean)",
+        "name" : "YOTELAIR Changi Airport Landside (SG Clean)",
         "refund" : "Fully Refundable Reserve now, pay later",
-        "amount": "921",
+        "amount": "300",
         "day": "per night",
-        "rating": "4.1",
-        "distance": "0.35km from the airport"
+        "rating": "3.5",
+        "distance": "0.35"
     },
 
     {
         "img_url" : "https://images.trvl-media.com/hotels/43000000/42730000/42723700/42723659/b7d4814b.jpg?impolicy=resizecrop&rw=455&ra=fit",
         "id" : "3",
-        "name" : "Dusit Thani Laguna Singapore",
+        "name" : "Dusit Thani Laguna",
         "refund" : "Fully Refundable Reserve now, pay later",
-        "amount": "922",
+        "amount": "200",
         "day": "per night",
-        "rating": "4.5",
-        "distance": "2.82km from the airport"
+        "rating": "2.3",
+        "distance": "2.82"
     },
 
     {
@@ -37,9 +37,241 @@
         "id" : "4",
         "name" : "Changi Cove (SG Clean)",
         "refund" : "Fully Refundable Reserve now, pay later",
-        "amount": "923",
+        "amount": "100",
+        "day": "per night",
+        "rating": "1",
+        "distance": "0.15"
+    },
+
+    {
+        "img_url" : "https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/7000000/6470000/6468000/6467933/123bcc06_b.jpg",
+        "id" : "5",
+        "name" : "The Ritz-Carlton",
+        "refund" : "Reserve now, pay later",
+        "amount": "198",
+        "day": "per night",
+        "rating": "4.7",
+        "distance": "0.20"
+    },
+
+    {
+        "img_url" : "https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/71000000/70940000/70938000/70937930/f6b35dce_b.jpg",
+        "id" : "6",
+        "name" : "Hilton Embassy Manyate Business Park",
+        "refund" : "Fully Refundable",
+        "amount": "158",
+        "day": "per night",
+        "rating": "4.0",
+        "distance": "4"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/1000000/860000/851500/851448/360577d2.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "7",
+        "name" : "The Leela Palace",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "221",
+        "day": "per night",
+        "rating": "4.6",
+        "distance": "1.6"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/13000000/12250000/12246300/12246261/51428abe.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "8",
+        "name" : "Shangri-La-Bengaluru",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "223",
+        "day": "per night",
+        "rating": "4.6",
+        "distance": "6"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/1000000/30000/21700/21672/3b47de32.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "9",
+        "name" : "The Oberoi, Bengaluru",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "176",
+        "day": "per night",
+        "rating": "4.8",
+        "distance": "4.4"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/4000000/3120000/3114400/3114317/f0784799.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "10",
+        "name" : "ITC Gardenia, a Luxury Collection Hotel",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "173",
+        "day": "per night",
+        "rating": "4.6",
+        "distance": "1.5"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/1000000/470000/465100/465008/1f8a8fdf.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "11",
+        "name" : "Taj West End",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "198",
         "day": "per night",
         "rating": "4.5",
-        "distance": "2.47km from the airport"
+        "distance": "6.2"
+    },
+
+    {
+        "img_url" : "https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/8000000/7870000/7864600/7864542/a5c88344_b.jpg",
+        "id" : "12",
+        "name" : "Hilton",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "105",
+        "day": "per night",
+        "rating": "4.2",
+        "distance": "3.7"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/5000000/4720000/4718600/4718535/8c5d366c.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "13",
+        "name" : "Fairmont",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "495",
+        "day": "per night",
+        "rating": "4",
+        "distance": "5.9"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/1000000/490000/487500/487440/7d3e7c2a.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "14",
+        "name" : "Taj Fateh Prakash Palace",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "458",
+        "day": "per night",
+        "rating": "4.1",
+        "distance": "6.2"
+    },
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/88000000/87810000/87806400/87806359/04447a05.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "15",
+        "name" : "Zana Lake Resort",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "317",
+        "day": "per night",
+        "rating": "4.6",
+        "distance": "1.2"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/84000000/83720000/83711500/83711438/f8333b78.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "16",
+        "name" : "Lush 3-Bedroom Villa with Private Pool",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "450",
+        "day": "per night",
+        "rating": "4.3",
+        "distance": "1.5"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/83000000/82480000/82479900/82479866/c294d906.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "17",
+        "name" : "Hotel Red Chilly",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "363",
+        "day": "per night",
+        "rating": "3.8",
+        "distance": "2.3"
+    },
+
+    {
+        "img_url" : "https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/20000000/19700000/19691400/19691305/def816c3_b.jpg",
+        "id" : "18",
+        "name" : "The Bulgari Hotel",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "507",
+        "day": "per night",
+        "rating": "4.6",
+        "distance": "0.4"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/30000000/29150000/29148700/29148667/da29c6c7.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "19",
+        "name" : "Mandarin Oriental Wangfujing",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "520",
+        "day": "per night",
+        "rating": "4.9",
+        "distance": "4.8"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/10000000/9260000/9253000/9252962/07f2b1c2.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "20",
+        "name" : "Yanqi Hotel",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "583",
+        "day": "per night",
+        "rating": "3.6",
+        "distance": "0.8"
+    },
+
+    {
+        "img_url" : "https://a.travel-assets.com/media/meso_cm/PAPI/Images/hotels/1000000/540000/533700/533673/b7bf26ba_b.jpg",
+        "id" : "21",
+        "name" : "The MUSE",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "359",
+        "day": "per night",
+        "rating": "4.4",
+        "distance": "0.6"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/13000000/12080000/12078200/12078123/054f2414.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "22",
+        "name" : "The Beekman,A Thompson Hotel",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "433",
+        "day": "per night",
+        "rating": "4",
+        "distance": "3.7"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/1000000/10000/100/87/e1ed605d.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "23",
+        "name" : "Sheraton New York Times Square Hotel",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "322",
+        "day": "per night",
+        "rating": "3.5",
+        "distance": "9.2"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/4000000/3280000/3276000/3275965/f4a4ecdb.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "24",
+        "name" : "Kimpton Hotel Eventi, an IHG Hotel",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "325",
+        "day": "per night",
+        "rating": "4.9",
+        "distance": "10.3"
+    },
+
+    {
+        "img_url" : "https://images.trvl-media.com/hotels/1000000/540000/533500/533436/350db1fe.jpg?impolicy=resizecrop&rw=455&ra=fit",
+        "id" : "25",
+        "name" : "Library Hotel",
+        "refund" : "Fully Refundable Reserve now, pay later",
+        "amount": "351",
+        "day": "per night",
+        "rating": "2.8",
+        "distance": "5.63"
     }
+
+
 ]
