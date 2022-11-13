@@ -37,7 +37,7 @@
         "id" : "4",
         "name" : "Changi Cove (SG Clean)",
         "refund" : "Fully Refundable Reserve now, pay later",
-        "amount": "100",
+        "amount": "299",
         "day": "per night",
         "rating": "1",
         "distance": "0.15"
@@ -79,7 +79,7 @@
     {
         "img_url" : "https://images.trvl-media.com/hotels/13000000/12250000/12246300/12246261/51428abe.jpg?impolicy=resizecrop&rw=455&ra=fit",
         "id" : "8",
-        "name" : "Shangri-La-Bengaluru",
+        "name" : "Shangri-La",
         "refund" : "Fully Refundable Reserve now, pay later",
         "amount": "223",
         "day": "per night",
@@ -90,7 +90,7 @@
     {
         "img_url" : "https://images.trvl-media.com/hotels/1000000/30000/21700/21672/3b47de32.jpg?impolicy=resizecrop&rw=455&ra=fit",
         "id" : "9",
-        "name" : "The Oberoi, Bengaluru",
+        "name" : "The Oberoi",
         "refund" : "Fully Refundable Reserve now, pay later",
         "amount": "176",
         "day": "per night",

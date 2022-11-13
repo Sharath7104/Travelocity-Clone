@@ -10,801 +10,802 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="../teeny-cow-2697/css/style.css"> -->
 
     <style>
         body {
-            background-color: #f0f3f5;
-            /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-            font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* *********************chatbox******************* */
-        .open-button {
-            background-color: white;
-            color: #0087ca;
-            padding: 5px 20px;
-            border: 1px solid #0087ca;
-            border-radius: 15px;
-            cursor: pointer;
-            opacity: 0.8;
-            position: fixed;
-            bottom: 23px;
-            right: 28px;
-            width: 280px;
-        }
-
-        i {
-            margin-right: 5px;
-        }
-
-        /* The popup chat - hidden by default */
-        .chat-popup {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            right: 15px;
-            border: 3px solid #f1f1f1;
-            z-index: 9;
-        }
-
-        /* Add styles to the form container */
-        .form-container {
-            max-width: 300px;
-            padding: 10px;
-            background-color: white;
-        }
-
-        /* Full-width textarea */
-        .form-container textarea {
-            width: 100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            border: none;
-            background: #f1f1f1;
-            resize: none;
-            min-height: 200px;
-        }
-
-        /* When the textarea gets focus, do something */
-        .form-container textarea:focus {
-            background-color: #ddd;
-            outline: none;
-        }
-
-        /* Set a style for the submit/send button */
-        .form-container .btn {
-            background-color: #04AA6D;
-            color: white;
-            padding: 16px 20px;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
-
-        /* Add a red background color to the cancel button */
-        .form-container .cancel {
-            background-color: red;
-        }
-
-        /* Add some hover effects to buttons */
-        .form-container .btn:hover {
-            opacity: 1;
-        }
-
-        .open-button:hover {
-            background-color: #0087ca;
-            color: white;
-        }
-
-        /* ***********************end of chat********************* */
-
-        #browser {
-            border: none;
-        }
-
-        .nav {
-            width: 90%;
-            margin: auto;
-            display: flex;
-            height: 70px;
-            color: white;
-        }
-
-        .nav>div {
-            margin-left: 40%;
-        }
-
-        .logo {
-            width: 15%;
-            height: 70px;
-        }
-
-        #more-menus {
-            border: none;
-            background-color: #0a438b;
-            color: white;
-        }
-
-        #options {
-            background-color: white;
-            color: black;
-            padding: 20px;
-        }
-
-        .section-two {
-            display: flex;
-        }
-
-        .section-two>div {
-            margin-top: 20px;
-            margin-bottom: 20px;
-            margin-right: 20px;
-        }
-
-        .section-two>div>a{
-            color: white;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .main {
-            background-color: #0a438b;
-        }
-
-        #more-menus {
-            font-weight: bolder;
-        }
-
-        select {
-
-            padding: 15px;
-        }
-
-        .navbar {
-            background-color: #0a438b !important;
-            height: 70px;
-        }
-
-        #more {
-            color: white;
-            font-weight: bolder;
-        }
-
-        .dropdown-toggle::after {
-            color: white;
-        }
-
-        .poster {
-            width: 100%;
-            background-image: url('https://forever.travel-assets.com/flex/flexmanager/images/2021/06/25/TVLY_SeizeYourSomeday_lpheroB_1680x945_20210623.jpg?impolicy=fcrop&w=900&h=225&q=mediumHigh');
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100%;
-            padding: 30px;
-        }
-
-        .poster>img {
-            height: auto;
-        }
-
-        .tabs {
-            background-color: white;
-            width: 80%;
-            margin: auto;
-            border-radius: 20px;
-
-        }
-
-
-        /* ************hover********** */
-        .hover-underline-animation {
-            display: inline-block;
-            position: relative;
-            /* color: #0087ca; */
-        }
-
-        .hover-underline-animation::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #0087ca;
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-
-        .hover-underline-animation:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-
-        /* **************end of hover************* */
-
-        /* ******************tabs************* */
-
-        .mytabs {
-            display: flex;
-            flex-wrap: wrap;
-            /* max-width: 600px; */
-            margin: 50px auto;
-            padding: 25px;
-            width: 80%;
-            margin: auto;
-            justify-content: center;
-        }
-
-        .mytabs input[type="radio"] {
-            display: none;
-        }
-
-        .mytabs label {
-            padding: 10px;
-            /* background: #e2e2e2; */
-            font-weight: bold;
-        }
-
-        .mytabs label:hover {
-            color: skyblue;
-        }
-
-        .mytabs .tab {
-            width: 100%;
-            padding: 20px;
-            background: #fff;
-            order: 1;
-            display: none;
-        }
-
-        .mytabs .tab h2 {
-            font-size: 3em;
-        }
-
-        .mytabs input[type='radio']:checked+label+.tab {
-            display: block;
-        }
-
-
-
-
-
-        .mytabs input[type="radio"]:checked+label {
-            background: #fff;
-        }
-
-
-        /* *****************end of tabs************ */
-
-        .none {
-            display: none;
-        }
-
-        .none1 {
-            display: none;
-        }
-
-        .search {
-            margin: 20px;
-            border: none;
-            background-color: #0D5AB9;
-            color: white;
-            border-radius: 8px;
-            font-size: 20px;
-            padding: 10px 60px;
-            font-weight: 600;
-        }
-
-        .center {
-            text-align: center;
-        }
-
-        .flex {
-            width: 78%;
-            margin: auto;
-            display: flex;
-            gap: 20px;
-        }
-
-        .flex>div {
-            border-radius: 10px;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-            margin: 140px 0px 40px 0px;
-        }
-
-        .flex>div>img {
-            width: 100%;
-            height: 180px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .sub p {
-            width: 90%;
-            margin: auto;
-            margin: 10px 20px;
-
-        }
-
-        .sub h6 {
-            width: 90%;
-            margin: auto;
-            position: absolute;
-            margin-top: -30px;
-            font-weight: 900;
-            margin-left: 20px;
-            color: white;
-            text-shadow: 0px 2px 2px rgb(17 21 26 / 80%);
-        }
-
-        #comfort {
-            border: none;
-            color: #0087ca;
-            width: 117px;
-
-        }
-
-        #comfort>option {
-            color: black;
-
-        }
-
-        #comfort:focus-visible {
-            border: none;
-        }
-
-        #traveller {
-            border: none;
-            color: #0087ca;
-            width: 117px;
-            margin-left: 30%;
-        }
-
-        #traveller:focus-visible {
-            border: none;
-        }
-
-        #traveller>option {
-            color: black;
-
-        }
-
-        #comfort:hover {
-            text-decoration: underline;
-        }
-
-        .anotherflight {
-            border: none;
-            color: #0087ca;
-            cursor: pointer;
-        }
-
-        .fbutton {
-            border: none;
-        }
-
-        .fbutton:hover {
-            background-color: #0087ca;
-        }
-
-        .dealsmain {
-            display: flex;
-            width: 78%;
-            margin: auto;
-            gap: 20px;
-        }
-
-        .dealssub1 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_AllInclusive_imgB_1199x399_20211104.jpg");
-            background-repeat: no-repeat;
-            width: 100%;
-            background-size: 100% 100%;
-            height: 250px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-        .dealssub2 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_LastMinute_imgB_1199x399_20211104.jpg");
-            background-repeat: no-repeat;
-            width: 100%;
-            background-size: 100% 100%;
-            border-radius: 10px;
-            height: 250px;
-        }
-
-        .contentdeals>h4 {
-            margin-top: 50px;
-            margin-left: 20px;
-            color: white;
-            font-weight: 700;
-        }
-
-        .contentdeals>p {
-            width: 50%;
-            margin-left: 20px;
-            color: white;
-        }
-
-        .contentdeals>button {
-            margin-left: 20px;
-            border: none;
-            border-radius: 8px;
-            padding: 4px 15px;
-            color: #0087ca;
-        }
-
-        .ad {
-            display: flex;
-            width: 78%;
-            margin: auto;
-        }
-
-        .adimg {
-            background-image: url("https://tpc.googlesyndication.com/simgad/12141448158023663412?");
-            background-repeat: no-repeat;
-            width: 60%;
-            background-size: 100% 100%;
-            height: 200px;
-            border-radius: 10px 0px 0px 10px;
-            margin-bottom: 30px;
-
-        }
-
-        .adicon {
-            background-color: white;
-            padding: 0px 12px;
-            border-radius: 15px;
-            margin-top: 25px;
-            margin-left: 27px;
-            position: absolute;
-        }
-
-        .addlogo {
-            width: 40%;
-            padding-left: 20px;
-            padding-top: 40px;
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-            height: 200px;
-            border-radius: 0px 10px 10px 0px;
-            background-color: white;
-        }
-
-        .addlogo>h5 {
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .anchor_style {
-            text-decoration: none !important;
-        }
-
-        .beach {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Beach_imgB_900x506_20211104.jpg?impolicy=fcrop&w=900&h=600&q=mediumHigh");
-        }
-
-        .car_rentals {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Car_imgB_900x506_20211104.jpg?impolicy=fcrop&w=900&h=600&q=mediumHigh');
-        }
-
-        .discount {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_MOD_imgB_900x506_20211104.jpg?impolicy=fcrop&w=900&h=600&q=mediumHigh");
-        }
-
-        .vacation {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_VacationRentals_imgB_900x506_20211104.jpg?impolicy=fcrop&w=900&h=600&q=mediumHigh");
-        }
-
-        .dec {
-            background-repeat: no-repeat;
-            width: 23%;
-            background-size: 100% 100%;
-            height: 200px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-        .start_planning {
-            display: flex;
-            width: 78%;
-            margin: auto;
-            justify-content: space-between;
-        }
-
-        .h2 {
-            width: 78%;
-            margin: auto;
-        }
-
-        .h2>h2 {
-            font-weight: 700;
-        }
-
-        .dec>h3 {
-            color: white;
-            font-weight: 700;
-            text-align: center;
-            margin-top: 46%;
-        }
-
-        .crd {
-            margin-top: 55% !important;
-        }
-
-        .featured {
-            display: flex;
-            width: 85%;
-            gap: 10px;
-            margin-left: 11%;
-        }
-
-        .vdeals {
-            background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Family_imgB_1200x674_20211104.jpg");
-            background-repeat: no-repeat;
-            width: 75%;
-            background-size: cover;
-            height: 250px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            background-position: center;
-        }
-
-        .los {
-            background-image: url("https://tpc.googlesyndication.com/simgad/5427221584508000979");
-            background-repeat: no-repeat;
-            width: 20%;
-            background-size: 100% 100%;
-            height: 250px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-
-        .vid {
-            width: 78%;
-            margin: auto;
-        }
-
-        .vidbor {
-            border-radius: 10px;
-        }
-
-        #whole {
-            width: 100%;
-        }
-
-        .help {
-            display: grid;
-            width: 78%;
-            margin: auto;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-bottom: 50px;
-
-        }
-
-        .help>a>div {
-            padding: 10px;
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-            border-radius: 10px;
-            background-color: white;
-        }
-
-        .help>a>div>div {
-            display: grid;
-            justify-content: space-between;
-            grid-template-columns: auto auto;
-            width: 100%;
-            margin: auto;
-            font-weight: 700;
-        }
-
-        .help>a>div>div~p {
-            font-size: 13px;
-            margin-top: -9px;
-        }
-
-        .help>a {
-            text-decoration: none !important;
-            color: black;
-        }
-
-        .getapp {
-            display: flex;
-            width: 78%;
-            margin: auto;
-            margin-bottom: 50px;
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
-        }
-
-        .getapp>div:nth-child(1) {
-            background-image: url("https://a.travel-assets.com/mad-service/footer/marquee/TVLY_App_Footer_v1.jpg");
-            width: 33%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            border-radius: 10px 0px 0px 10px;
-        }
-
-        .getapp>div:nth-child(2) {
-            width: 42%;
-            background-color: white;
-            overflow: visible;
-            padding: 1% 1%;
-        }
-
-        .getapp>div:nth-child(3) {
-            width: 25%;
-            background-color: white;
-
-            text-align: center;
-            padding-top: 2%;
-            border-radius: 0px 10px 10px 0px;
-        }
-
-        .wrapper {
-            display: flex;
-            width: 100%;
-            gap: 10px;
-            margin: auto;
-            /* width: 40% !important; */
-        }
-
-        .wrapper>div:nth-child(1) {
-            width: 30%;
-        }
-
-        .wrapper>div:nth-child(2) {
-            width: 30%;
-        }
-
-        .wrapper>div:nth-child(3) {
-            width: 30%;
-        }
-
-        .wrapper>div>input {
-            padding: 4px;
-            width: 97%;
-        }
-
-        .wrapper>div>button {
-            background-color: #0D5AB9;
-            border-radius: 0.5rem;
-            padding: 5px 10px;
-            color: white;
-            border: none;
-        }
-
-        .getappchildtwo {
-            padding-left: 20px;
-        }
-
-        .getappchildtwo>h4 {
-            font-weight: 700;
-        }
-
-        .agreemsg {
-            font-size: 12px;
-            margin-top: 10px;
-        }
-
-
-        .ddmenu {
-            display: flex;
-            width: 80%;
-            margin: auto;
-            gap: 20px;
-        }
-
-        .ddmenu>div:nth-child(1) {
-            width: 50%;
-            margin: 10px 0px;
-
-        }
-
-        .ddmenu>div:nth-child(2) {
-            width: 50%;
-            margin: 10px 0px;
-        }
-
-
-        .ddmenu>div>button {
-            width: 100%;
-            text-align: left;
-            padding: 10px;
-            font-size: 18px;
-            font-weight: 700;
-            border-radius: 5px;
-            border: none;
-            background-color: white;
-            color: #505c66;
-            cursor: pointer;
-        }
-
-        .ddmenu>div>button:focus {
-            outline: none
-        }
-
-        .listflex {
-            display: flex;
-        }
-
-        .listflex>div>ul {
-            list-style-type: none;
-        }
-
-        .ddmenulastdiv {
-            width: 100% !important;
-        }
-
-        .chat-virtual {
-            text-align: center;
-        }
-
-        .chat-virtual>h6 {
-            font-weight: 700;
-        }
-
-        .footer {
-            display: flex;
-            justify-content: space-evenly;
-            width: 85%;
-            margin: auto;
-            margin-top: 60px;
-        }
-
-        .footer>div {
-            width: 20%;
-        }
-
-        .footer>div>ul {
-            list-style-type: none;
-            margin-left: -15%;
-        }
-
-        .footer>div>ul>li {
-            margin-bottom: 10px;
-            font-size: 12px;
-        }
-
-        .footer>div>h6 {
-            font-weight: 700;
-        }
-
-        .last {
-            color: black;
-            margin-bottom: 50px;
-        }
-
-        hr {
-            border: 0.5px solid #9f9797;
-            width: 85%;
-            margin: auto;
-        }
-
-        .home-end {
-            width: 85%;
-            margin: auto;
-            text-align: center;
-            font-size: 12px;
-            color: #575555;
-            margin-top: 20px;
-            margin-bottom: 50px;
-        }
-
-        .copy {
-            margin-top: 5px;
-        }
-
-        .icon-margin {
-            margin-left: 85%;
-        }
-
-        
+    background-color: #f0f3f5;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* *********************chatbox******************* */
+.open-button {
+    background-color: white;
+    color: #0087ca;
+    padding: 5px 20px;
+    border: 1px solid #0087ca;
+    border-radius: 15px;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+}
+
+i {
+    margin-right: 5px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover {
+    opacity: 1;
+}
+
+.open-button:hover {
+    background-color: #0087ca;
+    color: white;
+}
+
+/* ***********************end of chat********************* */
+
+#browser {
+    border: none;
+}
+
+.nav {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    height: 70px;
+    color: white;
+}
+
+.nav>div {
+    margin-left: 40%;
+}
+
+.logo {
+    width: 15%;
+    height: 70px;
+}
+
+#more-menus {
+    border: none;
+    background-color: #0a438b;
+    color: white;
+}
+
+#options {
+    background-color: white;
+    color: black;
+    padding: 20px;
+}
+
+.section-two {
+    display: flex;
+}
+
+.section-two>div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.section-two>div>a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.main {
+    background-color: #0a438b;
+}
+
+#more-menus {
+    font-weight: bolder;
+}
+
+select {
+
+    padding: 15px;
+}
+
+.navbar {
+    background-color: #0a438b !important;
+    height: 70px;
+}
+
+#more {
+    color: white;
+    font-weight: bolder;
+}
+
+.dropdown-toggle::after {
+    color: white;
+}
+
+.poster {
+    width: 100%;
+    background-image: url('https://forever.travel-assets.com/flex/flexmanager/images/2021/06/25/TVLY_SeizeYourSomeday_lpheroB_1680x945_20210623.jpg?impolicy=fcrop&w=900&h=225&q=mediumHigh');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding: 30px;
+}
+
+.poster>img {
+    height: auto;
+}
+
+.tabs {
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+
+}
+
+
+/* ************hover********** */
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    /* color: #0087ca; */
+}
+
+.hover-underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0087ca;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* **************end of hover************* */
+
+/* ******************tabs************* */
+
+.mytabs {
+    display: flex;
+    flex-wrap: wrap;
+    /* max-width: 600px; */
+    margin: 50px auto;
+    padding: 25px;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+}
+
+.mytabs input[type="radio"] {
+    display: none;
+}
+
+.mytabs label {
+    padding: 10px;
+    /* background: #e2e2e2; */
+    font-weight: bold;
+}
+
+.mytabs label:hover {
+    color: skyblue;
+}
+
+.mytabs .tab {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    order: 1;
+    display: none;
+}
+
+.mytabs .tab h2 {
+    font-size: 3em;
+}
+
+.mytabs input[type='radio']:checked+label+.tab {
+    display: block;
+}
+
+
+
+
+
+.mytabs input[type="radio"]:checked+label {
+    background: #fff;
+}
+
+
+/* *****************end of tabs************ */
+
+.none {
+    display: none;
+}
+
+.none1 {
+    display: none;
+}
+
+.search {
+    margin: 20px;
+    border: none;
+    background-color: #0D5AB9;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 10px 60px;
+    font-weight: 600;
+}
+
+.center {
+    text-align: center;
+}
+
+.flex {
+    width: 78%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+}
+
+.flex>div {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: 140px 0px 40px 0px;
+}
+
+.flex>div>img {
+    width: 100%;
+    height: 180px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.sub p {
+    width: 90%;
+    margin: auto;
+    margin: 10px 20px;
+
+}
+
+.sub h6 {
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    margin-top: -30px;
+    font-weight: 900;
+    margin-left: 20px;
+    color: white;
+    text-shadow: 0px 2px 2px rgb(17 21 26 / 80%);
+}
+
+#comfort {
+    border: none;
+    color: #0087ca;
+    width: 117px;
+
+}
+
+#comfort>option {
+    color: black;
+
+}
+
+#comfort:focus-visible {
+    border: none;
+}
+
+#traveller {
+    border: none;
+    color: #0087ca;
+    width: 117px;
+    margin-left: 30%;
+}
+
+#traveller:focus-visible {
+    border: none;
+}
+
+#traveller>option {
+    color: black;
+
+}
+
+#comfort:hover {
+    text-decoration: underline;
+}
+
+.anotherflight {
+    border: none;
+    color: #0087ca;
+    cursor: pointer;
+}
+
+.fbutton {
+    border: none;
+}
+
+.fbutton:hover {
+    background-color: #0087ca;
+}
+
+.dealsmain {
+    display: flex;
+    width: 78%;
+    margin: auto;
+    gap: 20px;
+}
+
+.dealssub1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_AllInclusive_imgB_1199x399_20211104.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100% 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.dealssub2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_LastMinute_imgB_1199x399_20211104.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100% 100%;
+    border-radius: 10px;
+    height: 250px;
+}
+
+.contentdeals>h4 {
+    margin-top: 50px;
+    margin-left: 20px;
+    color: white;
+    font-weight: 700;
+}
+
+.contentdeals>p {
+    width: 50%;
+    margin-left: 20px;
+    color: white;
+}
+
+.contentdeals>button {
+    margin-left: 20px;
+    border: none;
+    border-radius: 8px;
+    padding: 4px 15px;
+    color: #0087ca;
+}
+
+.ad {
+    display: flex;
+    width: 78%;
+    margin: auto;
+}
+
+.adimg {
+    background-image: url("https://tpc.googlesyndication.com/simgad/12141448158023663412?");
+    background-repeat: no-repeat;
+    width: 60%;
+    background-size: 100% 100%;
+    height: 200px;
+    border-radius: 10px 0px 0px 10px;
+    margin-bottom: 30px;
+
+}
+
+.adicon {
+    background-color: white;
+    padding: 0px 12px;
+    border-radius: 15px;
+    margin-top: 25px;
+    margin-left: 27px;
+    position: absolute;
+}
+
+.addlogo {
+    width: 40%;
+    padding-left: 20px;
+    padding-top: 40px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    height: 200px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: white;
+}
+
+.addlogo>h5 {
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.anchor_style {
+    text-decoration: none !important;
+}
+
+.beach {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Beach_imgB_900x506_20211104.jpg?impolicy=fcrop&w=900&h=600&q=mediumHigh");
+}
+
+.car_rentals {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Car_imgB_900x506_20211104.jpg?impolicy=fcrop&w=900&h=600&q=mediumHigh');
+}
+
+.discount {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_MOD_imgB_900x506_20211104.jpg?impolicy=fcrop&w=900&h=600&q=mediumHigh");
+}
+
+.vacation {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_VacationRentals_imgB_900x506_20211104.jpg?impolicy=fcrop&w=900&h=600&q=mediumHigh");
+}
+
+.dec {
+    background-repeat: no-repeat;
+    width: 23%;
+    background-size: 100% 100%;
+    height: 200px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.start_planning {
+    display: flex;
+    width: 78%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.h2 {
+    width: 78%;
+    margin: auto;
+}
+
+.h2>h2 {
+    font-weight: 700;
+}
+
+.dec>h3 {
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 46%;
+}
+
+.crd {
+    margin-top: 55% !important;
+}
+
+.featured {
+    display: flex;
+    width: 85%;
+    gap: 10px;
+    margin-left: 11%;
+}
+
+.vdeals {
+    background-image: url("https://forever.travel-assets.com/flex/flexmanager/images/2021/11/08/TVLY_Storefront_Family_imgB_1200x674_20211104.jpg");
+    background-repeat: no-repeat;
+    width: 75%;
+    background-size: cover;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    background-position: center;
+}
+
+.los {
+    background-image: url("https://tpc.googlesyndication.com/simgad/5427221584508000979");
+    background-repeat: no-repeat;
+    width: 20%;
+    background-size: 100% 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.vid {
+    width: 78%;
+    margin: auto;
+}
+
+.vidbor {
+    border-radius: 10px;
+}
+
+#whole {
+    width: 100%;
+}
+
+.help {
+    display: grid;
+    width: 78%;
+    margin: auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+
+}
+
+.help>a>div {
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.help>a>div>div {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+    width: 100%;
+    margin: auto;
+    font-weight: 700;
+}
+
+.help>a>div>div~p {
+    font-size: 13px;
+    margin-top: -9px;
+}
+
+.help>a {
+    text-decoration: none !important;
+    color: black;
+}
+
+.getapp {
+    display: flex;
+    width: 78%;
+    margin: auto;
+    margin-bottom: 50px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+.getapp>div:nth-child(1) {
+    background-image: url("https://a.travel-assets.com/mad-service/footer/marquee/TVLY_App_Footer_v1.jpg");
+    width: 33%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.getapp>div:nth-child(2) {
+    width: 42%;
+    background-color: white;
+    overflow: visible;
+    padding: 1% 1%;
+}
+
+.getapp>div:nth-child(3) {
+    width: 25%;
+    background-color: white;
+
+    text-align: center;
+    padding-top: 2%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin: auto;
+    /* width: 40% !important; */
+}
+
+.wrapper>div:nth-child(1) {
+    width: 30%;
+}
+
+.wrapper>div:nth-child(2) {
+    width: 30%;
+}
+
+.wrapper>div:nth-child(3) {
+    width: 30%;
+}
+
+.wrapper>div>input {
+    padding: 4px;
+    width: 97%;
+}
+
+.wrapper>div>button {
+    background-color: #0D5AB9;
+    border-radius: 0.5rem;
+    padding: 5px 10px;
+    color: white;
+    border: none;
+}
+
+.getappchildtwo {
+    padding-left: 20px;
+}
+
+.getappchildtwo>h4 {
+    font-weight: 700;
+}
+
+.agreemsg {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+
+.ddmenu {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    gap: 20px;
+}
+
+.ddmenu>div:nth-child(1) {
+    width: 50%;
+    margin: 10px 0px;
+
+}
+
+.ddmenu>div:nth-child(2) {
+    width: 50%;
+    margin: 10px 0px;
+}
+
+
+.ddmenu>div>button {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color: #505c66;
+    cursor: pointer;
+}
+
+.ddmenu>div>button:focus {
+    outline: none
+}
+
+.listflex {
+    display: flex;
+}
+
+.listflex>div>ul {
+    list-style-type: none;
+}
+
+.ddmenulastdiv {
+    width: 100% !important;
+}
+
+.chat-virtual {
+    text-align: center;
+}
+
+.chat-virtual>h6 {
+    font-weight: 700;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    width: 85%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+.footer>div {
+    width: 20%;
+}
+
+.footer>div>ul {
+    list-style-type: none;
+    margin-left: -15%;
+}
+
+.footer>div>ul>li {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.footer>div>h6 {
+    font-weight: 700;
+}
+
+.last {
+    color: black;
+    margin-bottom: 50px;
+}
+
+hr {
+    border: 0.5px solid #9f9797;
+    width: 85%;
+    margin: auto;
+}
+
+.home-end {
+    width: 85%;
+    margin: auto;
+    text-align: center;
+    font-size: 12px;
+    color: #575555;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.copy {
+    margin-top: 5px;
+}
+
+.icon-margin {
+    margin-left: 85%;
+}
+
     </style>
+
 </head>
 
 <body>
@@ -817,7 +818,7 @@
         <div class="main">
             <div class="nav">
 
-                <img class="logo" src="C:\Users\shara\Downloads\gladden-trip-logo2.png" alt="">
+                <img class="logo" src="gladden-trip-logo2.png" alt="">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -852,10 +853,10 @@
 
                 <div class="section-two">
                     <div><a href=""> Espanol</a></div>
-                   <div><a href="listproperty.html">List your property</a></div>
+                    <div><a href="listproperty.html">List your property</a></div>
                     <div><a href="">Support</a> </div>
                     <div><a href="">Trips</a> </div>
-                    <div><a href="">Sign in</a> </div>
+                    <div><a href="signin.html">Sign in</a> </div>
                 </div>
 
 
@@ -872,7 +873,7 @@
                         <input type="text" id="goingto" placeholder="Going to">
                         <input type="date" id="startdate" placeholder="Check-in">
                         <input type="date" id="enddate" placeholder="Check-out">
-                        <input type="text" placeholder="Travelers">
+                        <input type="text" placeholder="Travelers" required>
 
                         <div>
                             <input type="checkbox" id="add_flight" onclick="display()"><span>Add Flight</span>
@@ -932,9 +933,6 @@
                                 <input type="text" placeholder="Checkout" onfocus="(this.type='date')">
                             </div>
 
-                            <div class="center">
-                                <button class="search">Search</button>
-                            </div>
                         </div>
 
                         <div id="one_way" class="city" style="display:none">
@@ -954,9 +952,6 @@
                                 <input type="text" placeholder="Checkout" onfocus="(this.type='date')">
                             </div>
 
-                            <div class="center">
-                                <button class="search">Search</button>
-                            </div>
                         </div>
 
                         <div id="multi" class="city" style="display:none">
@@ -965,17 +960,63 @@
                             <input type="text" placeholder="Going to">
                             <input type="text" placeholder="Departing" onfocus="(this.type='date')">
 
+                            <div class="addflight1">
+                                <h6>Flight2</h6>
+                                <input type="text" placeholder="Leaving from">
+                                <input type="text" placeholder="Going to">
+                                <input type="text" placeholder="Departing" onfocus="(this.type='date')">
 
-                            <h6>Flight2</h6>
-                            <input type="text" placeholder="Leaving from">
-                            <input type="text" placeholder="Going to">
-                            <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+                                <button class="anotherflight1" onclick="addflight1()">Add/Remove Flight</button>
 
-                            <button class="anotherflight">Add Another Flight</button>
 
-                            <div class="center">
-                                <button class="search">Search</button>
                             </div>
+
+                            <div class="addflight2" style="display:none">
+                                <div>
+                                    <h6>Flight3</h6>
+                                </div>
+
+                                <input type="text" placeholder="Leaving from">
+                                <input type="text" placeholder="Going to">
+                                <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+
+                                <button class="anotherflight2" onclick="addflight2()">Add/Remove Flight</button>
+
+                            </div>
+
+
+                            <div class="addflight3" style="display:none">
+                                <div>
+                                    <h6>Flight4</h6>
+                                </div>
+
+                                <input type="text" placeholder="Leaving from">
+                                <input type="text" placeholder="Going to">
+                                <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+
+                                <button class="anotherflight3" onclick="addflight3()">Add/Remove Flight</button>
+
+                            </div>
+
+                            <div class="addflight4" style="display:none">
+                                <div>
+                                    <h6>Flight5</h6>
+                                </div>
+
+                                <input type="text" placeholder="Leaving from">
+                                <input type="text" placeholder="Going to">
+                                <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+                                <p>Maximum of 5 Flights can be added</p>
+
+                            </div>
+
+
+
+
+
+                        </div>
+                        <div class="center">
+                            <button class="search">Search</button>
                         </div>
 
 
@@ -1043,37 +1084,41 @@
                     <input type="radio" id="tabpack" name="mytabs">
                     <label for="tabpack" class="hover-underline-animation">Packages</label>
                     <div class="tab">
-                        <h2>Packages</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat
-                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <!-- <h2>Packages</h2> -->
+                        <input type="text" placeholder="Leaving from">
+                        <input type="text" placeholder="Going to">
+                        <input type="text" placeholder="Departing" onfocus="(this.type='date')">
+                        <input type="text" placeholder="Returning" onfocus="(this.type='date')">
+                        <div class="center">
+                            <button class="search">Search</button>
+                        </div>
                     </div>
+                    
 
                     <input type="radio" id="tabthings" name="mytabs">
                     <label for="tabthings" class="hover-underline-animation">Things to do</label>
                     <div class="tab">
-                        <h2>Things to do</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat
-                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <!-- <h2>Things to do</h2> -->
+                        <input type="text" placeholder="Things to do in">
+                        <input type="text" placeholder="From" onfocus="(this.type='date')">
+                        <input type="text" placeholder="To" onfocus="(this.type='date')">
+                        <div class="center">
+                            <button class="search">Search</button>
+                        </div>
                     </div>
 
                     <input type="radio" id="tabcru" name="mytabs">
                     <label for="tabcru" class="hover-underline-animation">Cruises</label>
                     <div class="tab">
-                        <h2>Cruises</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                            cupidatat
-                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <!-- <h2>Cruises</h2> -->
+                        <p>For expert cruise advice, call 1-855-257-1605.</p>
+                        <input type="text" placeholder="Destination">
+                        <input type="number" placeholder="Number of traveller">
+                        <input type="text" placeholder="Departs as early as" onfocus="(this.type='date')">
+                        <input type="text" placeholder="Departs as late as" onfocus="(this.type='date')">
+                        <div class="center">
+                            <button class="search">Search</button>
+                        </div>
                     </div>
 
                 </div>
@@ -1461,7 +1506,10 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
 
+<!-- <script src="index.js"></script> -->
+
 <script>
+    
     function display() {
         var addflight = document.getElementById("add_flight");
         var inp = document.querySelector(".none");
@@ -1510,9 +1558,6 @@
     }
 
 
-</script>
-
-<script>
     function openForm() {
         document.getElementById("myForm").style.display = "block";
     }
@@ -1520,9 +1565,7 @@
     function closeForm() {
         document.getElementById("myForm").style.display = "none";
     }
-</script>
 
-<script>
     let button = document.getElementById("listbtn");
     let list = document.querySelector(".listflex");
     list.style.display = "none"
@@ -1536,8 +1579,8 @@
     })
 
     // **************localStorage***********
-    function stays(){
-        window.location='./hotels.html';
+    function stays() {
+        window.location = './hotels.html';
 
         let place = document.getElementById("goingto").value;
 
@@ -1545,6 +1588,47 @@
 
 
     }
+
+    function addflight1() {
+        let button1 = document.getElementsByClassName("anotherflight1");
+        let list = document.querySelector(".addflight2");
+
+
+        if (list.style.display == "none") {
+            list.style.display = "block"
+        } else {
+            list.style.display = "none"
+        }
+
+    }
+
+    function addflight2() {
+
+        let button1 = document.getElementsByClassName("anotherflight2");
+        let list = document.querySelector(".addflight3");
+
+
+        if (list.style.display == "none") {
+            list.style.display = "block"
+        } else {
+            list.style.display = "none"
+        }
+    }
+
+    function addflight3() {
+
+        let button1 = document.getElementsByClassName("anotherflight3");
+        let list = document.querySelector(".addflight4");
+
+
+        if (list.style.display == "none") {
+            list.style.display = "block"
+        } else {
+            list.style.display = "none"
+        }
+    }
+
+
 
 
 </script>

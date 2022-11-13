@@ -5,241 +5,243 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List your Property</title>
+    <!-- <link rel="stylesheet" href="../css/stylelist.css"> -->
 
     <style>
-
         body{
-            font-family: sans-serif;
-        }
+    font-family: sans-serif;
+    overflow-x: hidden;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
 
-        .navlist{
-            padding: 10px 0px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.navlist{
+    padding: 10px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-        }
+}
 
-        .navlist>img{
-            height: 32px;
-            margin-left: 32px;
-        }
-        
-        .listbanner{
-            background-image: url("https://headless.expediagroup.com/content/dam/marketing/headless/images/home-page/Content-page-image-hero-LG2.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            width: 100%;
-            display: flex;
-            margin: auto;
-            height: 420px;
-            margin-top: 5px;
-        }
+.navlist>img{
+    height: 32px;
+    margin-left: 32px;
+}
 
-        .listbanner>div:nth-child(1){
-            width: 55%;
-        }
+.listbanner{
+    background-image: url("https://headless.expediagroup.com/content/dam/marketing/headless/images/home-page/Content-page-image-hero-LG2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    height: 420px;
+    margin-top: 5px;
+}
 
-        .listbanner>div>img{
-            width: 20%;
-        }
+.listbanner>div:nth-child(1){
+    width: 55%;
+}
 
-        .liketolist{
-            display: flex;
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            gap: 15px;
-            
-        }
+.listbanner>div>img{
+    width: 20%;
+}
 
-        .liketolist>div:nth-child(1){
-            width: 50%;
-        }
+.liketolist{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    gap: 15px;
+    
+}
 
-        .liketolist>div:nth-child(2){
-            width: 50%;
-        }
+.liketolist>div:nth-child(1){
+    width: 50%;
+}
 
-        .liketolist>div{
-            border: 1px solid #009;
-            padding: 40px 15px;
-            border-radius: 25px;
-            background-color: white;
-            cursor: pointer;
-        }
+.liketolist>div:nth-child(2){
+    width: 50%;
+}
 
-        .liketolist>div>p{
-            width: 85%;
-            margin: auto;
-            font-size: 13px;
-            margin-top: -15px;
-            color: rgb(109, 106, 106);
-        }
+.liketolist>div{
+    border: 1px solid #009;
+    padding: 40px 15px;
+    border-radius: 25px;
+    background-color: white;
+    cursor: pointer;
+}
 
-        .lodgeprivate>h2{
-            margin-left: 10%;
-            color: #009;
-        }
+.liketolist>div>p{
+    width: 85%;
+    margin: auto;
+    font-size: 13px;
+    margin-top: -15px;
+    color: rgb(109, 106, 106);
+}
 
-        .lodgeprivate{
-            width: 75%;
-            background-color: white;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-            border-radius: 20px;
-            padding: 30px 20px;
-        }
+.lodgeprivate>h2{
+    margin-left: 10%;
+    color: #009;
+}
 
-        .info{
-            width: 80%;
-        }
+.lodgeprivate{
+    width: 75%;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    border-radius: 20px;
+    padding: 30px 20px;
+}
 
-        
+.info{
+    width: 80%;
+}
 
-        .grid{
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            margin-top: 60px;
-        }
 
-        .grid>div>img{
-            width: 25%;
-        }
 
-        .grid>div>p{
-            font-size: 14px;
-            width: 70%;
-            margin: auto;
-        }
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin-top: 60px;
+}
 
-        .rightguests{
-            text-align: center;
-            width: 80%;
-            margin: auto;
-            margin-top: 10%;
-        }
+.grid>div>img{
+    width: 25%;
+}
 
-        .membersmain{
-            width: 80%;
-            margin: auto;
-            margin-top: 10%;
-            margin-bottom: 10%;
-            text-align: center;
-        }
+.grid>div>p{
+    font-size: 14px;
+    width: 70%;
+    margin: auto;
+}
 
-        .members{
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-           
-        }
+.rightguests{
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+}
 
-        .members>div>img{
-            height: 70px;
-            width: 70%;
-            margin: auto;
-        }
+.membersmain{
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+}
 
-        .listbenefits
-        {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-        }
+.members{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+   
+}
 
-        .listbenefits>div:nth-child(1)>p{
-            width: 60%;
-            margin: auto;
-        }
+.members>div>img{
+    height: 70px;
+    width: 70%;
+    margin: auto;
+}
 
-        .benefitgrid{
-            display: grid;
-            width: 90%;
-            margin: auto;
-            grid-template-columns: repeat(2,1fr);
-            margin-top: 8%;
-            margin-bottom: 10%;
-        }
+.listbenefits
+{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
 
-        .benefitgrid>div>img{
-            width: 30%;
-        }
+.listbenefits>div:nth-child(1)>p{
+    width: 60%;
+    margin: auto;
+}
 
-        .benefitgrid>div>p{
-            width: 80%;
-            margin: auto;
-            font-size: 14px;
-        }
+.benefitgrid{
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 8%;
+    margin-bottom: 10%;
+}
 
-        .readytostart{
-            background-color: #eff1f3;
-            text-align: center;
-            padding: 50px 0px;
-        }
+.benefitgrid>div>img{
+    width: 30%;
+}
 
-        .readytostart>button{
-            background-color: #009;
-            padding: 15px 20px;
-            color: white;
-            font-weight: bold;
-            border: none;
-            border-radius: 2px;
-        }
+.benefitgrid>div>p{
+    width: 80%;
+    margin: auto;
+    font-size: 14px;
+}
 
-        .readytostart>button+p{
-            margin-top: 50px;
-        }
+.readytostart{
+    background-color: #eff1f3;
+    text-align: center;
+    padding: 50px 0px;
+}
 
-        .footer{
-            background-color: #000099;
-            color: white;
-            width: 100%;
-        }
+.readytostart>button{
+    background-color: #009;
+    padding: 15px 20px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 2px;
+}
 
-        .footergrid{
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            width: 40%;
-            margin: auto;
-            padding: 3% 0%;
-            
-        }
+.readytostart>button+p{
+    margin-top: 50px;
+}
 
-        .footergrid>div>img{
-            width: 60%;
-        }
+.footer{
+    background-color: #000099;
+    color: white;
+    width: 100%;
+}
 
-        .footergrid>div:nth-child(3)>p{
-            font-size: 12px;
-        }
+.footergrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 40%;
+    margin: auto;
+    padding: 3% 0%;
+    
+}
 
-        .copyright{
-            text-align: center;
-            padding-bottom: 3%;
-        }
+.footergrid>div>img{
+    width: 60%;
+}
 
-        .copyright>p{
-            font-size: 12px;
-        }
+.footergrid>div:nth-child(3)>p{
+    font-size: 12px;
+}
 
-        .copyright>a{
-           color: white;
-            border-right: 2px solid white;
-            height: 500px;
-            padding: 0px 10px;
-            font-size: 12px;
-            text-decoration: none;
-        }
+.copyright{
+    text-align: center;
+    padding-bottom: 3%;
+}
 
-        .copyright>a:hover{
-            text-decoration: underline;
-        }
+.copyright>p{
+    font-size: 12px;
+}
 
-        hr{
-            width: 65%;
-            border: 0.1px solid #5252ff
-        }
+.copyright>a{
+   color: white;
+    border-right: 2px solid white;
+    height: 500px;
+    padding: 0px 10px;
+    font-size: 12px;
+    text-decoration: none;
+}
 
-        
-        
-</style>
+.copyright>a:hover{
+    text-decoration: underline;
+}
+
+hr{
+    width: 65%;
+    border: 0.1px solid #5252ff
+}
+
+
+
+    </style>
 
 
 
@@ -301,7 +303,7 @@
 
     <div class="membersmain">
         <div>
-            <h2>Travelocity is a member of the Expedia Group marketplace of travel brands</h2>
+            <h2>Gladden-Trip is a member of the Expedia Group marketplace of travel brands</h2>
         </div>
 
         <div class="members">

@@ -6,109 +6,170 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css">
-    
+    <!-- <link rel="stylesheet" href="../teeny-cow-2697/css/hotels.css"> -->
     <title>Document</title>
 
     <style>
-        body {
-            background-color: #f0f3f5;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
-        }
+body {
+    background-color: #f0f3f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+}
 
-        #hotelsmain {
-            width: 100%;
-            margin: auto;
-        }
+#hotelsmain {
+    width: 100%;
+    margin: auto;
+}
 
-        .hotellist {
-            display: flex;
-            background-color: white;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            height: 180px;
+.hotellist {
+    display: flex;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    height: 180px;
 
-        }
+}
 
-        .hotellist>div:nth-child(1) {
-            width: 40%;
-        }
+.hotellist>div:nth-child(1) {
+    width: 40%;
+}
 
-        .hotellist>div:nth-child(2) {
-            width: 60%;
-            padding: 0px 10px;
-        }
+.hotellist>div:nth-child(2) {
+    width: 60%;
+    padding: 0px 10px;
+}
 
 
 
-        .hotellist>div>img {
-            width: 100%;
-            height: 100%;
-            border-radius: 10px 0px 0px 10px;
-        }
+.hotellist>div>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0px 0px 10px;
+}
 
-        .rateprice {
-            display: flex;
-            justify-content: space-between;
-        }
+.rateprice {
+    display: flex;
+    justify-content: space-between;
+}
 
-        .rateprice>div>p {
-            font-size: 13px;
-        }
+.rateprice>div>p {
+    font-size: 13px;
+}
 
-        .pdata {
-            margin-top: -20px;
-        }
+.pdata {
+    margin-top: -20px;
+}
 
-        .price {
-            margin-top: 5px;
-        }
+.price {
+    margin-top: 5px;
+}
 
-        .rating {
-            margin-top: -10px;
-        }
+.rating {
+    margin-top: -10px;
+}
 
-        .refund {
-            margin-top: 29px;
-            width: 60%;
-            color: #1f7d57;
-        }
+.refund {
+    margin-top: 29px;
+    width: 60%;
+    color: #1f7d57;
+}
 
-        .distance {
-            margin-top: -15px;
-            font-size: 13px;
-        }
+.distance {
+    margin-top: -15px;
+    font-size: 13px;
+}
 
-        .total {
-            margin-top: -10px;
-            font-size: 14px;
-        }
+.total {
+    margin-top: -10px;
+    font-size: 14px;
+}
 
-        .hotelspagegrid {
-            width: 90%;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 400px repeat(auto-fill, 750px) 300px;
-            gap: 10px;
-            justify-content: space-around;
-        }
+.hotelspagegrid {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 400px repeat(auto-fill, 750px) 300px;
+    gap: 10px;
+    justify-content: space-around;
+}
 
-        .leftgrid {
-            width: 80%;
-            margin-left: 50px;
-        }
+.leftgrid {
+    width: 80%;
+    margin-left: 50px;
+}
 
-        .fixed>img{
-            position: fixed;
-            margin-top: 60px;
-        }
+.fixed>img{
+    position: fixed;
+    margin-top: 60px;
+}
 
-        .button{
-            background-color: #1f7d57;
-            border: none;
-            border-radius: 3px;
-            color: white;
-            padding: 2px 6px;
-        }
+.button{
+    background-color: #1f7d57;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 2px 6px;
+}
+
+.selectsort{
+    padding: 10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.hotelleftimage{
+    margin-top: 15px;
+    position: fixed;
+}
+
+.sortlabel{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* ***************checkout***************** */
+
+#checkoutmain{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+#checkoutmain>div:nth-child(1){
+    width: 20%;
+}
+
+#checkoutmain>div:nth-child(2){
+    width: 60%;
+}
+
+
+#checkoutmain>div:nth-child(3){
+    width: 20%;
+}
+
+#checkoutmain>div:nth-child(2)>div>img{
+    width: 100%;
+    height: 300px;
+}
+
+#checkoutmain>div:nth-child(2)>div>button{
+    padding: 10px 20px;
+    color: white;
+    background-color:#1f7d57;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.leftimage{
+    margin-right: -78px;
+}
+
+
+        
     </style>
 </head>
 
@@ -121,10 +182,15 @@
             </h2>
             <input type="text" id="inputsearch" placeholder="&#xF002; eg.Crowne"
                 style="font-family: Arial, 'Font Awesome 5 Free'" oninput="search()">
+
+                <div class="hotelleftimage">
+                    <img src="https://tpc.googlesyndication.com/simgad/3946250365577771837?" alt="">
+                    <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor laudantium impedit sapiente perferendis, atque harum ipsa, ab sit, culpa rem explicabo sunt fugit cupiditate iste qui aperiam doloribus sed beatae.</p> -->
+                </div>
         </div>
         <div>
-            <label for="sort">Sort By</label>
-            <select name="" id="sort" onchange="sort()">
+            <label for="sort" class="sortlabel">Sort By</label>
+            <select name="" id="sort" onchange="sort()" class="selectsort">
                 <option value="">Recommended</option>
                 <option value="price">Price</option>
                 <option value="distance">Distance</option>
@@ -148,7 +214,7 @@
 <script>
 
 
-    let url = "./data.json";
+    let url = "/data.json";
 
     let data = [];
 
