@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../teeny-cow-2697/css/login.css"> -->
+
+    <style>
+      body{
+    overflow-x: hidden;
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.regmain{
+    width: 100%;
+}
+
+#signupform{
+    width: 25%;
+    margin: auto;
+}
+#signupform>input[type="text"], input[type="password"], input[type="email"]{
+    margin-bottom: 30px;
+    padding: 15px 15px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 20px;
+}
+
+#signupform>input[type="text"], input[type="password"], input[type="email"]::placeholder{
+    font-size: 18px;
+}
+
+.regnav{
+    width: 100%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+input[type="submit"]{
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0D5AB9;
+    color: white;
+    width: 100%;
+}
+
+input[type="submit"]:hover{
+    background-color: #032b5b;
+}
+
+.sub{
+    text-align: center;
+}
+
+.forgot{
+    margin-top: 20px;
+}
+
+.regmain{
+    width: 100%;
+}
+
+#regform{
+    width: 25%;
+    margin: auto;
+}
+#regform>input[type="text"], input[type="password"], input[type="email"]{
+    margin-bottom: 30px;
+    padding: 15px 15px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 20px;
+}
+
+#regform>input[type="text"], input[type="password"], input[type="email"]::placeholder{
+    font-size: 18px;
+}
+
+.regnav{
+    width: 100%;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+input[type="submit"]{
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0D5AB9;
+    color: white;
+    width: 100%;
+}
+
+input[type="submit"]:hover{
+    background-color: #032b5b;
+}
+
+.sub{
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+    <div class="regmain">
+        
+        <div class="regnav">
+            <img width="15%" src="gladden-trip-logo1.png" alt="">
+        </div>
+        <div>
+            
+            <form id="signupform" action="">
+                
+                <h1>Sign in</h1>
+                <input type="email" id="email" placeholder="Email address" required><br>
+                <input type="password" id="password" placeholder="Password" required><br>
+    
+                <input type="checkbox" checked><label for="">Keep me signed in</label>
+                <p>Selecting this checkbox will keep you signed into your account on this device until you sign out. Do not select this on shared devices.</p>
+                <p>By creating an account, I agree to the Travelocity <a href="">Terms and Conditions</a> and <a href=""> Privacy Statement.</a></p>
+
+                <div class="sub">
+                    <input type="Submit" value="Sign in">
+                    <div class="forgot">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    
+                    <p>Don't have an account? <a href="registration.html">Create one</a></p>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    let lsdata = JSON.parse(localStorage.getItem("gladden-data")) || [];
+   let form = document.getElementById("signupform").addEventListener("submit", login);
+   function login(){
+     event.preventDefault()
+ 
+     var email = document.getElementById("email").value;
+     var pass = document.getElementById("password").value;
+ 
+    let count = false;
+ 
+     lsdata.forEach(element => {
+       if(email == "" && pass == ""){
+       alert("Enter email/username")
+     } 
+     else if(email == element.email  && pass == element.pass){
+       count = true;
+     } else{
+       count = false;
+     }
+     });
+       if(count){
+        window.location.href = "index.html"
+         alert("Sign in successful")
+        
+       } else {
+         alert("Wrong Credentials")
+       }
+       
+     }
+     
+   
+ </script>
